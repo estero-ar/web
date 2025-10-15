@@ -30,7 +30,7 @@ h1, h2, h3, .logo {
    HEADER / HERO
 ===================== */
 .hero {
-  background: url('assets/fondo-hero.jpg') center/cover no-repeat;
+  background: url('assets/img/fondo-hero.jpg') center/cover no-repeat;
   color: #fff;
   min-height: auto;
   padding: 0;
