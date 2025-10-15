@@ -58,3 +58,11 @@ if (hamburger) {
   });
 }
 
+// Cerrar menú al tocar afuera
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.navbar') && navLinks.classList.contains('show')) {
+    navLinks.classList.remove('show');
+  }
+});
+
+
