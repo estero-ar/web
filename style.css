@@ -295,3 +295,21 @@ section {
     padding: 3rem 1rem;
   }
 }
+
+.main-content {
+  background: url('assets/img/madera-lujo.jpg') repeat-y center top;
+  background-size: cover;
+}
+
+
+/* Overlay semitransparente sobre la textura de madera */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05); /* ajusta la opacidad según lo necesites */
+  z-index: -1; /* queda detrás del contenido */
+}
