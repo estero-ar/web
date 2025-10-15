@@ -158,7 +158,7 @@ section {
 .sobre-estero {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #fff;
+  /* background-color: #fff; <-- blanco */
   color: #333;
 }
 
