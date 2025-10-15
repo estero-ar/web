@@ -228,7 +228,7 @@ section {
 
 /* MAIN CONTENT - Textura madera */
 .main-content {
-  background: url('assets/background-general.jpg') repeat-y center top;
+  background: url('assets/PINE_PANEL.jpg') repeat-y center top;
   background-size: cover;
   position: relative;
 }
