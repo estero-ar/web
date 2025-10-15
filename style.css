@@ -13,7 +13,8 @@
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  background: #fff;
+  background: url('assets/fondo-hero.jpg')repeat-y center top;
+  background-size: cover;
   color: #3e3e3e;
   padding-left: 0;
 
