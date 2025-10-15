@@ -31,7 +31,6 @@ h1, h2, h3, .logo {
    HEADER / HERO
 ===================== */
 .hero {
-  background: url('assets/fondo-hero.jpg' alt=imagen-madera) center/cover no-repeat;
   color: #fff;
   min-height: auto;
   padding: 0;
@@ -297,7 +296,7 @@ section {
 }
 
 .main-content {
-  background: url('assets/img/madera-lujo.jpg') repeat-y center top;
+  background: url('assets/fondo-hero.jpg') repeat-y center top;
   background-size: cover;
 }
 
