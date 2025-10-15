@@ -25,16 +25,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  background: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 2rem;
+  background: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 60px;
+  height: 50px; /* podés ajustar el tamaño a gusto */
   width: auto;
   object-fit: contain;
 }
-
 
 .nav-links {
   list-style: none;
