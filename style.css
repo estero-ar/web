@@ -302,13 +302,14 @@ section {
 
 
 /* Overlay semitransparente sobre la textura de madera */
-body::before {
+.main-content::before {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.05); /* ajusta la opacidad según lo necesites */
-  z-index: -1; /* queda detrás del contenido */
+  background: rgba(255,255,255,0.1); /* ligera capa blanca para contraste */
+  z-index: -1;
 }
+
