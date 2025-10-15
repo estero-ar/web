@@ -1,31 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // FORMULARIO
+
+  // =======================
+  // FORMULARIO DE CONTACTO
+  // =======================
   const form = document.querySelector('.formulario');
   if (form) {
     form.addEventListener('submit', function(e){
-      e.preventDefault();
+      e.preventDefault(); // evita recargar la página
       alert('Gracias por tu mensaje. Te responderemos pronto.');
-      form.reset();
+      form.reset(); // limpia los campos después de enviar
     });
   }
 
+  // =======================
   // MENÚ HAMBURGUESA
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+  // =======================
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
   if (hamburger) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita que el click se propague al document
       navLinks.classList.toggle('show');
     });
   }
 
- // Cerrar el menú al tocar fuera
-document.addEventListener('click', (e) => {
-  const navLinks = document.querySelector('.nav-links');
-  const hamburger = document.querySelector('.hamburger');
-  if (navLinks && hamburger) {
-    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-      navLinks.classList.remove('show');
+  // =======================
+  // CERRAR MENÚ AL TOCAR FUERA
+  // =======================
+  document.addEventListener('click', (e) => {
+    if (navLinks && hamburger) {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove('show');
+      }
     }
-  }
+  });
+
 });
