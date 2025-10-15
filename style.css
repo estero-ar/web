@@ -29,12 +29,12 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #f5e3ca;
-  letter-spacing: 2px;
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
+
 
 .nav-links {
   list-style: none;
