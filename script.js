@@ -19,10 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // CERRAR MENÚ AL TOCAR FUERA
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar') && navLinks.classList.contains('show')) {
+ // Cerrar el menú al tocar fuera
+document.addEventListener('click', (e) => {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+  if (navLinks && hamburger) {
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
       navLinks.classList.remove('show');
     }
-  });
+  }
 });
