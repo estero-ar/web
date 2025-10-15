@@ -296,7 +296,7 @@ section {
 }
 
 .main-content {
-  background: url('assets/fondo-hero.jpg') repeat-y center top;
+  background: url('assets/background-general.jpg') repeat-y center top;
   background-size: cover;
 }
 
