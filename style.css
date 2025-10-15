@@ -26,14 +26,14 @@ h2 {
 .hero {
   background: url('fondo-madera.jpg') center/cover no-repeat;
   color: #fff;
-  height: 100vh;
-  min-height: 400px;
-  padding: 2rem 1rem;
+  min-height: auto; /* evita ocupar toda la pantalla */
+  padding: 0; /* elimina espacio extra */
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
+
 
 .navbar {
   display: flex;
@@ -73,8 +73,10 @@ h2 {
 
 .hero-text {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
 
 .btn {
   background: #a37b49;
