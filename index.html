@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estero | Carpintería Artesanal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
+
   <!-- HEADER -->
   <header class="hero">
     <nav class="navbar">
       <a href="#" class="logo">
-  <img src="assets/logo-estero.png" alt="Estero Carpintería Artesanal" />
-</a>
-        <ul class="nav-links">
+        <img src="assets/logo-estero.png" alt="Estero Carpintería Artesanal" />
+      </a>
+      <ul class="nav-links">
         <li><a href="#trabajos">Trabajos</a></li>
         <li><a href="#opiniones">Opiniones</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
     <div class="hero-text">
-      <h2>Carpintería artesanal argentina</h2>
-      <p>Muebles a medida · Diseño personalizado · Calidad artesanal</p>
       <a href="#contacto" class="btn">Contactanos</a>
     </div>
   </header>
@@ -35,6 +35,11 @@
         En <strong>Estero</strong> trabajamos con pasión por la madera. Diseñamos y fabricamos muebles a medida combinando técnica, funcionalidad y estética artesanal.
         Cada pieza se realiza con dedicación para que encaje perfectamente en tu espacio.
       </p>
+      <div class="color-blocks">
+        <div style="background: linear-gradient(135deg, #a37b49, #f5e3ca);"></div>
+        <div style="background: linear-gradient(135deg, #f5e3ca, #eee);"></div>
+        <div style="background: linear-gradient(135deg, #eee, #a37b49);"></div>
+      </div>
     </div>
   </section>
 
@@ -43,12 +48,12 @@
     <div class="contenedor">
       <h2>Algunos de nuestros trabajos</h2>
       <div class="galeria">
-        <div class="foto"><p>📷 Imagen 1</p></div>
-        <div class="foto"><p>📷 Imagen 2</p></div>
-        <div class="foto"><p>📷 Imagen 3</p></div>
-        <div class="foto"><p>📷 Imagen 4</p></div>
-        <div class="foto"><p>📷 Imagen 5</p></div>
-        <div class="foto"><p>📷 Imagen 6</p></div>
+        <div class="foto" style="background: linear-gradient(135deg, #a37b49, #f5e3ca);">🎨</div>
+        <div class="foto" style="background: linear-gradient(135deg, #f5e3ca, #eee);">🎨</div>
+        <div class="foto" style="background: linear-gradient(135deg, #eee, #a37b49);">🎨</div>
+        <div class="foto" style="background: linear-gradient(135deg, #8c683d, #f5e3ca);">🎨</div>
+        <div class="foto" style="background: linear-gradient(135deg, #f5e3ca, #8c683d);">🎨</div>
+        <div class="foto" style="background: linear-gradient(135deg, #a37b49, #eee);">🎨</div>
       </div>
     </div>
   </section>
@@ -58,15 +63,15 @@
     <div class="contenedor">
       <h2>Lo que dicen nuestros clientes</h2>
       <div class="opiniones-grid">
-        <div class="opinion">
+        <div class="opinion" style="background: linear-gradient(135deg, #f5e3ca, #eee);">
           <p>"Excelente trabajo, muy prolijo y cumplió en tiempo y forma. ¡Recomendadísimo!"</p>
           <span>- Mariana G.</span>
         </div>
-        <div class="opinion">
+        <div class="opinion" style="background: linear-gradient(135deg, #eee, #a37b49);">
           <p>"Diseños hermosos y atención personalizada. El mueble quedó justo como lo imaginaba."</p>
           <span>- Pablo R.</span>
         </div>
-        <div class="opinion">
+        <div class="opinion" style="background: linear-gradient(135deg, #a37b49, #f5e3ca);">
           <p>"Un placer tratar con ellos. Calidad y calidez en el trato. Sin dudas volvería a elegirlos."</p>
           <span>- Laura S.</span>
         </div>
@@ -79,12 +84,14 @@
     <div class="contenedor">
       <h2>Contacto</h2>
       <p>¿Querés pedir un presupuesto o tenés una consulta?</p>
-      <form class="formulario">
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo" required />
-        <textarea placeholder="Tu mensaje" rows="4" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+      <div class="form-color-block">
+        <form class="formulario">
+          <input type="text" placeholder="Tu nombre" required />
+          <input type="email" placeholder="Tu correo" required />
+          <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
       <div class="contact-links">
         <a href="https://wa.me/54911XXXXXXXX" target="_blank">📱 WhatsApp</a>
         <a href="mailto:mail.maderasz@gmail.com">✉️ Email</a>
@@ -97,5 +104,6 @@
   <footer class="footer">
     <p>© 2025 Estero | Carpintería artesanal argentina</p>
   </footer>
+
 </body>
 </html>
