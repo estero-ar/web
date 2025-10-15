@@ -40,25 +40,28 @@ body {
 }
 
 /* HAMBURGUESA */
+/* HAMBURGUESA */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  z-index: 1100;
 }
 
 .hamburger div {
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: #fff;
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 /* NAV LINKS */
 .nav-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -72,49 +75,43 @@ body {
   color: #f5e3ca;
 }
 
+/* MOBILE MENU */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
+
   .nav-links {
     position: absolute;
     top: 60px;
     right: 1.5rem;
     flex-direction: column;
-    background: rgba(128,128,128,0.95);
+    background: rgba(128,128,128,0.98);
     padding: 1rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: fadeIn 0.25s ease-in-out;
   }
+
   .nav-links.show {
     display: flex;
   }
+
   .nav-links a {
     color: #fff;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     font-weight: 600;
-  }
-  .nav-links a:hover {
-    color: #f5e3ca;
+    font-size: 1.1rem;
   }
 }
 
-/* SECCIONES GENERALES */
-section {
-  padding: 4rem 2rem;
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.contenedor {
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
-
-h2 {
-  color: #a37b49;
-  margin-bottom: 1rem;
-}
 
 /* PRESENTACIÓN */
 .presentacion p {
@@ -207,6 +204,8 @@ h2 {
   color: #8c683d;
 }
 
+
+
 /* FOOTER */
 .footer {
   background: #f8f5f0;
@@ -215,3 +214,34 @@ h2 {
   color: #555;
   font-size: 0.9rem;
 }
+
+/* === SOBRE ESTERO === */
+.sobre-estero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+.sobre-estero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sobre-estero h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #7b4b2a;
+}
+
+.sobre-estero p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Ajuste de espacio entre el navbar y la primera sección */
+section:first-of-type {
+  margin-top: 0;
+  padding-top: 2rem;
+
