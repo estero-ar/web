@@ -19,6 +19,13 @@ body {
 
 }
 
+/* Títulos y logo con Bebas Neue */
+h1, h2, h3, .logo {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+
 /* =====================
    HEADER / HERO
 ===================== */
