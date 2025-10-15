@@ -264,3 +264,47 @@ img {
   height: auto;
   display: block;
 }
+
+/* HAMBURGUESA */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* NAV LINKS (escondidos en mobile) */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 1.5rem;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links a {
+    color: #fff;
+    padding: 0.5rem 0;
+  }
+}
