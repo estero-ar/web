@@ -278,6 +278,7 @@ img {
   height: 3px;
   background: #fff;
   border-radius: 2px;
+  transition: all 0.3s;
 }
 
 /* NAV LINKS (escondidos en mobile) */
@@ -295,10 +296,11 @@ img {
     top: 60px;
     right: 1.5rem;
     flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    padding: 1rem;
+    background: rgba(163,123,73,0.95); /* mismo color navbar */
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra suave */
   }
   .nav-links.show {
     display: flex;
@@ -306,5 +308,9 @@ img {
   .nav-links a {
     color: #fff;
     padding: 0.5rem 0;
+    font-weight: 600;
+  }
+  .nav-links a:hover {
+    color: #f5e3ca;
   }
 }
