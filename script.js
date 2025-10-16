@@ -36,27 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-});
 
-// CARROUSEL DE TEXTO
-document.addEventListener('DOMContentLoaded', () => {
+  // =======================
+  // SLIDER DE TEXTO (CARROUSEL)
+  // =======================
   const slides = document.querySelectorAll('.text-slider .slide');
-  let current = 0;
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
-    });
-  }
-
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
+  let index = 0;
 
   if (slides.length > 0) {
-    showSlide(current);
-    setInterval(nextSlide, 3000); // Cambia cada 3 segundos
-  }
-});
+    slides[index].classList.add('active');
 
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000); // Cambia cada 4 segundos
+  }
+
+});
