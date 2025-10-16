@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
- <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carpintería Estero | Muebles a medida en Buenos Aires</title>
   <meta name="description" content="Carpintería artesanal en Florencio Varela, Buenos Aires. Fabricamos muebles a medida en madera y melamina con diseño personalizado.">
@@ -13,126 +14,142 @@
   <!-- Tipografía -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-
   <!-- Archivos locales -->
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
+
 <body>
 
-  <!-- HEADER -->
+  <!-- ===================
+       HEADER + NAV
+  =================== -->
   <header class="hero">
     <nav class="navbar">
       <a href="#" class="logo">
         <img src="assets/logo-estero.png" alt="Estero Carpintería Artesanal" />
       </a>
+
       <div class="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
       </div>
+
       <ul class="nav-links" id="nav-links">
         <li><a href="#trabajos">Trabajos</a></li>
         <li><a href="#opiniones">Opiniones</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-  <div class="text-slider">
-  <div class="slide">
-    <img src="assets/foto1.jpg" alt="Mueble artesanal" />
-    <p>Diseñamos muebles únicos y personalizados</p>
-  </div>
-  <div class="slide">
-    <img src="assets/foto2.jpg" alt="Madera de calidad" />
-    <p>Trabajamos con madera de la mejor calidad</p>
-  </div>
-  <div class="slide">
-    <img src="assets/foto3.jpg" alt="Fabricación a medida" />
-    <p>Fabricación a medida para tu hogar</p>
-  </div>
-</div>
 
-</div>
-
+    <!-- ===================
+         CARROUSEL DE TEXTO
+    =================== -->
+    <div class="text-slider">
+      <div class="slide active">
+        <img src="assets/foto1.jpg" alt="Mueble artesanal" />
+        <div class="caption">
+          <h2>Diseñamos muebles únicos y personalizados</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/foto2.jpg" alt="Madera de calidad" />
+        <div class="caption">
+          <h2>Trabajamos con madera de la mejor calidad</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/foto3.jpg" alt="Fabricación a medida" />
+        <div class="caption">
+          <h2>Fabricación a medida para tu hogar</h2>
+        </div>
+      </div>
+    </div>
   </header>
 
- <div class="main-content">
-  <!-- PRESENTACIÓN -->
-  <section id="sobre-estero" class="sobre-estero">
-  <h1>Carpintería Estero</h1>
-  <h2>Muebles a medida con diseño artesanal</h2>
-  <p>En Estero diseñamos y fabricamos muebles únicos, combinando técnica artesanal con materiales de calidad. Trabajamos en Florencio Varela y toda la provincia de Buenos Aires.</p>
-</section>
+  <!-- ===================
+       CONTENIDO PRINCIPAL
+  =================== -->
+  <main class="main-content">
 
-  <section class="presentacion" id="sobre-estero">
-    <div class="contenedor">
-      <h2>Sobre Estero</h2>
-      <p>
-        En <strong>Estero</strong> trabajamos con pasión por la madera. Diseñamos y fabricamos muebles a medida combinando técnica, funcionalidad y estética artesanal.
-        Cada pieza se realiza con dedicación para que encaje perfectamente en tu espacio.
-      </p>
-    </div>
-  </section>
+    <!-- PRESENTACIÓN -->
+    <section id="sobre-estero" class="sobre-estero">
+      <h1>Carpintería Estero</h1>
+      <h2>Muebles a medida con diseño artesanal</h2>
+      <p>En Estero diseñamos y fabricamos muebles únicos, combinando técnica artesanal con materiales de calidad. Trabajamos en Florencio Varela y toda la provincia de Buenos Aires.</p>
+    </section>
 
-  <!-- TRABAJOS -->
-  <section id="trabajos" class="trabajos">
-    <div class="contenedor">
-      <h2>Algunos de nuestros trabajos</h2>
-      <div class="galeria">
-        <div class="foto"><p>🎨</p></div>
-        <div class="foto"><p>🎨</p></div>
-        <div class="foto"><p>🎨</p></div>
-        <div class="foto"><p>🎨</p></div>
-        <div class="foto"><p>🎨</p></div>
-        <div class="foto"><p>🎨</p></div>
+    <section class="presentacion">
+      <div class="contenedor">
+        <h2>Sobre Estero</h2>
+        <p>
+          En <strong>Estero</strong> trabajamos con pasión por la madera. Diseñamos y fabricamos muebles a medida combinando técnica, funcionalidad y estética artesanal.
+          Cada pieza se realiza con dedicación para que encaje perfectamente en tu espacio.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- OPINIONES -->
-  <section id="opiniones" class="opiniones">
-    <div class="contenedor">
-      <h2>Lo que dicen nuestros clientes</h2>
-      <div class="opiniones-grid">
-        <div class="opinion">
-          <p>"Excelente trabajo, muy prolijo y cumplió en tiempo y forma. ¡Recomendadísimo!"</p>
-          <span>- Mariana G.</span>
-        </div>
-        <div class="opinion">
-          <p>"Diseños hermosos y atención personalizada. El mueble quedó justo como lo imaginaba."</p>
-          <span>- Pablo R.</span>
-        </div>
-        <div class="opinion">
-          <p>"Un placer tratar con ellos. Calidad y calidez en el trato. Sin dudas volvería a elegirlos."</p>
-          <span>- Laura S.</span>
+    <!-- TRABAJOS -->
+    <section id="trabajos" class="trabajos">
+      <div class="contenedor">
+        <h2>Algunos de nuestros trabajos</h2>
+        <div class="galeria">
+          <div class="foto"><p>🎨</p></div>
+          <div class="foto"><p>🎨</p></div>
+          <div class="foto"><p>🎨</p></div>
+          <div class="foto"><p>🎨</p></div>
+          <div class="foto"><p>🎨</p></div>
+          <div class="foto"><p>🎨</p></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto">
-    <div class="contenedor">
-      <h2>Contacto</h2>
-      <p>¿Querés pedir un presupuesto o tenés una consulta?</p>
-      
-      <div class="contact-links">
-        <a href="https://wa.me/5491150450823" target="_blank">📱 WhatsApp</a>
-        <a href="mailto:veintiunoarca@gmail.com">✉️ Email</a>
-        <a href="https://www.instagram.com/estero.ar/" target="_blank">📸 Instagram</a>
+    <!-- OPINIONES -->
+    <section id="opiniones" class="opiniones">
+      <div class="contenedor">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="opiniones-grid">
+          <div class="opinion">
+            <p>"Excelente trabajo, muy prolijo y cumplió en tiempo y forma. ¡Recomendadísimo!"</p>
+            <span>- Mariana G.</span>
+          </div>
+          <div class="opinion">
+            <p>"Diseños hermosos y atención personalizada. El mueble quedó justo como lo imaginaba."</p>
+            <span>- Pablo R.</span>
+          </div>
+          <div class="opinion">
+            <p>"Un placer tratar con ellos. Calidad y calidez en el trato. Sin dudas volvería a elegirlos."</p>
+            <span>- Laura S.</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
- </div>
-  <!-- FOOTER -->
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+      <div class="contenedor">
+        <h2>Contacto</h2>
+        <p>¿Querés pedir un presupuesto o tenés una consulta?</p>
+
+        <div class="contact-links">
+          <a href="https://wa.me/5491150450823" target="_blank">📱 WhatsApp</a>
+          <a href="mailto:veintiunoarca@gmail.com">✉️ Email</a>
+          <a href="https://www.instagram.com/estero.ar/" target="_blank">📸 Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================
+       FOOTER
+  =================== -->
   <footer class="footer">
-   <footer>
-  <p>📍 Florencio Varela, Buenos Aires, Argentina</p>
-  <p>📞 <a href="https://wa.me/5491150450823" target="_blank">WhatsApp directo</a></p>
-  <p>✉️ <a href="mailto:veintiunoarca@gmail.com">veintiunoarca@gmail.com</a></p>
-  <p>© 2025 Carpintería Estero - Todos los derechos reservados</p>
-</footer>
-
+    <p>📍 Florencio Varela, Buenos Aires, Argentina</p>
+    <p>📞 <a href="https://wa.me/5491150450823" target="_blank">WhatsApp directo</a></p>
+    <p>✉️ <a href="mailto:veintiunoarca@gmail.com">veintiunoarca@gmail.com</a></p>
+    <p>© 2025 Carpintería Estero - Todos los derechos reservados</p>
   </footer>
 
 </body>
