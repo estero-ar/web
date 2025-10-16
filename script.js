@@ -93,3 +93,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const slides = document.querySelectorAll('.image-carousel .slide');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let index = 0;
+
+  function showSlide(newIndex) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active', 'prev');
+      if (i === newIndex) slide.classList.add('active');
+      else if (i === index) slide.classList.add('prev');
+    });
+    index = newIndex;
+  }
+
+  function nextSlide() {
+    let newIndex = (index + 1) % slides.length;
+    showSlide(newIndex);
+  }
+
+  function prevSlide() {
+    let newIndex = (index - 1 + slides.length) % slides.length;
+    showSlide(newIndex);
+  }
+
+  if (slides.length > 0) {
+    showSlide(index);
+    let interval = setInterval(nextSlide, 5000);
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 5000);
+    }
+  }
+
+});
+
