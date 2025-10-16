@@ -264,10 +264,12 @@ section {
 
 /* CONTACTO */
 .contact-links {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
+  z-index: 1;
 }
 
 .contact-links a {
