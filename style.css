@@ -13,10 +13,10 @@ body {
   background-size: cover;
   color: #3e3e3e;
   width: 100%;
-  overflow-x: hidden; /* evita scroll lateral */
+  overflow-x: hidden;
 }
 
-/* Títulos y logo con Bebas Neue */
+/* TÍTULOS Y LOGO */
 h1, h2, h3, .logo {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
@@ -25,12 +25,12 @@ h1, h2, h3, .logo {
 /* HEADER / HERO */
 .hero {
   color: #fff;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 /* NAVBAR */
@@ -41,7 +41,6 @@ h1, h2, h3, .logo {
   padding: 0.8rem 2rem;
   background: rgba(128,128,128,0.95);
   width: 100%;
-  position: relative;
   z-index: 1000;
 }
 
@@ -117,7 +116,6 @@ h1, h2, h3, .logo {
   }
 }
 
-/* Animación */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -125,7 +123,7 @@ h1, h2, h3, .logo {
 
 /* SECCIONES GENERALES */
 section {
-  padding: 4rem 0; /* sin padding lateral para que llegue a los bordes */
+  padding: 4rem 0;
 }
 
 /* CONTENEDOR */
@@ -133,7 +131,7 @@ section {
   max-width: 1100px;
   margin: auto;
   text-align: center;
-  padding: 0 1rem; /* solo márgenes internos */
+  padding: 0 1rem;
 }
 
 /* SOBRE ESTERO */
@@ -168,52 +166,81 @@ section {
   margin-top: 2rem;
 }
 
-/* =====================
-   SLIDER DE TEXTO
-===================== */
+/* ==========================
+   CARRUSEL PRINCIPAL
+========================== */
 .text-slider {
-  margin-top: 2rem;
-  overflow: hidden;
   position: relative;
-  height: 50px; /* altura del bloque del texto */
-}
-
-.text-slider .slide img {
-  position: absolute;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  overflow: hidden;
+}
+
+.text-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  animation: slideAnim 9s infinite;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #fff;
+  transition: all 1s ease-in-out;
+}
+
+.text-slider .slide.active {
+  left: 0;
+  opacity: 1;
+}
+
+.text-slider .slide.prev {
+  left: -100%;
+  opacity: 0;
+}
+
+.text-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.text-slider p {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.text-slider .slide:nth-child(1) { animation-delay: 0s; }
-.text-slider .slide:nth-child(2) { animation-delay: 3s; }
-.text-slider .slide:nth-child(3) { animation-delay: 6s; }
-
-@keyframes slideAnim {
-  0% { opacity: 0; transform: translateY(20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  30% { opacity: 1; transform: translateY(0); }
-  40% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 0; transform: translateY(-20px); }
+.text-slider .slide.active p {
+  opacity: 1;
 }
 
-
-.foto {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #888;
-  border-radius: 10px;
+/* Flechas del carrusel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.3s;
 }
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
 
 /* OPINIONES */
 .opiniones-grid {
@@ -270,7 +297,6 @@ section {
   position: relative;
 }
 
-/* Overlay semitransparente */
 .main-content::before {
   content: '';
   position: absolute;
@@ -282,41 +308,14 @@ section {
   z-index: 0;
 }
 
-/* =====================
-   SLIDER DE TEXTO GRANDE
-===================== */
-.text-slider {
-  position: relative;
-  width: 100%;
-  height: 250px; /* podés ajustar: 200px, 300px... */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.text-slider .slide {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem; /* tamaño del texto */
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.text-slider .slide.active {
-  opacity: 1;
-}
-
-
-
-
 /* AJUSTES MÓVIL */
 @media (max-width: 768px) {
   section {
     padding: 3rem 1rem;
+  }
+
+  .text-slider p {
+    font-size: 1.5rem;
+    bottom: 10%;
   }
 }
