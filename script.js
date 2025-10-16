@@ -36,102 +36,95 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // =======================
+  // LINKS DE CONTACTO
+  // =======================
+  const contactLinks = document.querySelectorAll('.contact-links a');
+  contactLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // NO preventDefault, deja que los links funcionen normalmente
+      // Esto asegura que WhatsApp, email e Instagram abran correctamente
+    });
+  });
 
   // =======================
-  // CARRUSEL DE IMÁGENES
+  // CARRUSEL DE TEXTO
   // =======================
-  const slider = document.querySelector('.text-slider');
-  const slides = document.querySelectorAll('.text-slider .slide');
-  let index = 0;
-  let interval;
+  const textSlider = document.querySelector('.text-slider');
+  const textSlides = document.querySelectorAll('.text-slider .slide');
+  let textIndex = 0;
+  let textInterval;
 
-  if (slides.length > 0 && slider) {
-    // Crear flechas
+  if (textSlider && textSlides.length > 0) {
     const prevBtn = document.createElement('button');
     const nextBtn = document.createElement('button');
     prevBtn.className = 'arrow prev';
     nextBtn.className = 'arrow next';
     prevBtn.innerHTML = '❮';
     nextBtn.innerHTML = '❯';
-    slider.appendChild(prevBtn);
-    slider.appendChild(nextBtn);
+    textSlider.appendChild(prevBtn);
+    textSlider.appendChild(nextBtn);
 
-    // Mostrar la primera imagen
-    slides[index].classList.add('active');
+    textSlides[textIndex].classList.add('active');
 
-    // Función para cambiar de slide
-    const showSlide = (newIndex) => {
-      slides[index].classList.remove('active');
-      index = (newIndex + slides.length) % slides.length;
-      slides[index].classList.add('active');
+    const showTextSlide = (newIndex) => {
+      textSlides[textIndex].classList.remove('active');
+      textIndex = (newIndex + textSlides.length) % textSlides.length;
+      textSlides[textIndex].classList.add('active');
     };
 
-    // Botones de navegación
-    prevBtn.addEventListener('click', () => {
-      showSlide(index - 1);
-      restartInterval();
-    });
+    prevBtn.addEventListener('click', () => { showTextSlide(textIndex - 1); restartTextInterval(); });
+    nextBtn.addEventListener('click', () => { showTextSlide(textIndex + 1); restartTextInterval(); });
 
-    nextBtn.addEventListener('click', () => {
-      showSlide(index + 1);
-      restartInterval();
-    });
-
-    // Cambio automático cada 5 segundos
-    const startAutoSlide = () => {
-      interval = setInterval(() => {
-        showSlide(index + 1);
-      }, 5000);
+    const startTextInterval = () => {
+      textInterval = setInterval(() => { showTextSlide(textIndex + 1); }, 5000);
     };
 
-    const restartInterval = () => {
-      clearInterval(interval);
-      startAutoSlide();
+    const restartTextInterval = () => {
+      clearInterval(textInterval);
+      startTextInterval();
     };
 
-    startAutoSlide();
+    startTextInterval();
   }
 
-});
+  // =======================
+  // CARRUSEL DE IMÁGENES
+  // =======================
+  const imageSlides = document.querySelectorAll('.image-carousel .slide');
+  const prevImageBtn = document.querySelector('.carousel-btn.prev');
+  const nextImageBtn = document.querySelector('.carousel-btn.next');
+  let imageIndex = 0;
+  let imageInterval;
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const slides = document.querySelectorAll('.image-carousel .slide');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  let index = 0;
-
-  function showSlide(newIndex) {
-    slides.forEach((slide, i) => {
+  function showImageSlide(newIndex) {
+    imageSlides.forEach((slide, i) => {
       slide.classList.remove('active', 'prev');
       if (i === newIndex) slide.classList.add('active');
-      else if (i === index) slide.classList.add('prev');
+      else if (i === imageIndex) slide.classList.add('prev');
     });
-    index = newIndex;
+    imageIndex = newIndex;
   }
 
-  function nextSlide() {
-    let newIndex = (index + 1) % slides.length;
-    showSlide(newIndex);
+  function nextImageSlide() {
+    showImageSlide((imageIndex + 1) % imageSlides.length);
   }
 
-  function prevSlide() {
-    let newIndex = (index - 1 + slides.length) % slides.length;
-    showSlide(newIndex);
+  function prevImageSlide() {
+    showImageSlide((imageIndex - 1 + imageSlides.length) % imageSlides.length);
   }
 
-  if (slides.length > 0) {
-    showSlide(index);
-    let interval = setInterval(nextSlide, 5000);
+  if (imageSlides.length > 0) {
+    showImageSlide(imageIndex);
+    imageInterval = setInterval(nextImageSlide, 5000);
 
-    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+    if (prevImageBtn) prevImageBtn.addEventListener('click', () => { prevImageSlide(); resetImageInterval(); });
+    if (nextImageBtn) nextImageBtn.addEventListener('click', () => { nextImageSlide(); resetImageInterval(); });
 
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 5000);
+    function resetImageInterval() {
+      clearInterval(imageInterval);
+      imageInterval = setInterval(nextImageSlide, 5000);
     }
   }
 
 });
-
