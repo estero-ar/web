@@ -288,6 +288,8 @@ section {
   color: #555;
   font-size: 0.9rem;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 /* MAIN CONTENT - Textura madera */
@@ -295,6 +297,7 @@ section {
   background: url('assets/PINE_PANEL.jpg') repeat-y center top;
   background-size: cover;
   position: relative;
+  z-index: 1;
 }
 
 .main-content::before {
