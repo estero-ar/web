@@ -178,9 +178,12 @@ section {
   height: 50px; /* altura del bloque del texto */
 }
 
-.text-slider .slide {
+.text-slider .slide img {
   position: absolute;
   width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
   opacity: 0;
   animation: slideAnim 9s infinite;
   text-align: center;
