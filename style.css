@@ -229,7 +229,7 @@ section {
   color: ##ffffffcc;
   background: none;
   border: none;
-  border-radius: 50%;
+  border-radius: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   z-index: 5;
