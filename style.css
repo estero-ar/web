@@ -226,9 +226,10 @@ section {
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  border: none;
+  color: ##ffffffcc;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
   padding: 0.5rem 1rem;
   cursor: pointer;
   z-index: 5;
